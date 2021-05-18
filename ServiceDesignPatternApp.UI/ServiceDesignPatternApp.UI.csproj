@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ServiceDesignPatternApp.Data\ServiceDesignPatternApp.Data.csproj" />
+    <ProjectReference Include="..\ServiceDesignPatternApp.Services\ServiceDesignPatternApp.Services.csproj" />
+  </ItemGroup>
+
+</Project>
