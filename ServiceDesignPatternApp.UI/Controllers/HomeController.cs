@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ServiceDesignPatternApp.Data.Entities;
 using ServiceDesignPatternApp.Services.EmployeeService;
+using ServiceDesignPatternApp.Services.EmployeeService.Dto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +26,15 @@ namespace ServiceDesignPatternApp.UI.Controllers
             var employees = _employeeService.GetEmployees();
 
             return Json(employees);
+        }
+
+        [Route("Add")]
+        [HttpPost]
+        public IActionResult AddEmployee([FromForm]Employee employee)
+        {
+            _employeeService.AddEmployee(employee);
+
+            return Json(employee);
         }
     }
 }

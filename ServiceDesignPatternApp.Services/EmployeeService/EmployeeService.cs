@@ -1,5 +1,6 @@
 ﻿using ServiceDesignPatternApp.Data.Context;
 using ServiceDesignPatternApp.Data.Entities;
+using ServiceDesignPatternApp.Services.EmployeeService.Dto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,14 @@ namespace ServiceDesignPatternApp.Services.EmployeeService
         {
             context = new CompanyContext();
         }
+
+        public void AddEmployee(Employee employee)
+        {
+            employee.IsDeleted = false;
+            context.Set<Employee>().Add(employee);
+            context.SaveChanges();
+        }
+
         public List<Employee> GetEmployees()
         {
             List<Employee> result = new List<Employee>();
